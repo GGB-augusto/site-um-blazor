@@ -1,0 +1,35 @@
+@page "/mensagem"
+
+<h1>Alternador de Mensagem</h1>
+
+<button @onclick="AlternarVisibilidade">
+    @if (exibirMensagem == true)
+    {
+        <span>Ocultar Mensagem</span>
+    }
+    else
+    {
+        <span>Exibir Mensagem</span>
+    }
+</button>
+
+@if (exibirMensagem == true)
+{
+    <p>Bem-vindo ao desenvolvimento web com .NET 10!</p>
+}
+
+@code {
+    private bool exibirMensagem = false;
+
+    private void AlternarVisibilidade()
+    {
+        if (exibirMensagem == true)
+        {
+            exibirMensagem = false;
+        }
+        else
+        {
+            exibirMensagem = true;
+        }
+    }
+}
